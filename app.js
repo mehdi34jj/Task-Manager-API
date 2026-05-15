@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const taskRoutes = require("./routes/tasks");
 
 const app = express();
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 app.use(cors());
 app.use(morgan("dev"));
